@@ -1,19 +1,15 @@
 package simplilearn1;
-
 import java.io.File;
 import java.util.Scanner;
 import java.util.TreeSet;
-
-
-
 class Operations {
-	
+	// Operations obj = new Operations();
 	static Scanner sc = new Scanner(System.in);
 	public static int a;
 	public static String c;
 	public static String d;
 	public static String e;
-	public static String Path="C:\\Users\\Laurel\\Desktop\\Project";
+	//public static String Path="C:\\Users\\Laurel\\Desktop\\Project";
 
 	public static void display() {
 		System.out.println("----------------------------------------------------------------");
@@ -26,11 +22,12 @@ class Operations {
 		a = sc.nextInt();
 	}
 
-	public static void view() {
+	public static void view() {// System.out.println("1");
 		System.out.println("----------------------------------------------------------------");
-		File f = new File(Path);
+		File f = new File("C:\\Users\\Laurel\\Desktop\\Project");
 		File[] arr = f.listFiles();
-		//adding elemnets to TreeSet... Tresset will sort values for me
+		// System.out.println(arr);
+		// System.out.println(arr.length);
 		TreeSet<String> abc = new TreeSet<String>();
 		for (int i = 0; i <= arr.length - 1; i++) {
 			abc.add(arr[i].getName());
@@ -45,17 +42,23 @@ class Operations {
 		System.out.println("----------------------------------------------------------------");
 		System.out.println("Please enter name of file");
 		c = sc.next();
-		File f = new File(Path + c + ".txt");
-		File f1 = new File(Path);
+		File f = new File("C:\\Users\\Laurel\\Desktop\\Project\\" + c + ".txt");
+		// File f = new File("C:\\Users\\Laurel\\Desktop\\Project\\lau1.txt");
+		// System.out.println("C:\\Users\\Laurel\\Desktop\\Project\\"+c+".txt");
+		// f.createNewFile();
+		File f1 = new File("C:\\Users\\Laurel\\Desktop\\Project");
 		File[] arr = f1.listFiles();
-		
+		// System.out.println(arr);
 		// System.out.println(arr.length);
 		TreeSet<String> abc = new TreeSet<String>();
 		for (int i = 0; i <= arr.length - 1; i++) {
 			abc.add(arr[i].getName());
 		}
 		// using sorting methods
-			if (abc.contains(c + ".txt")) {
+		// TreeSet abc = new TreeSet();
+		// System.out.println(abc);
+
+		if (abc.contains(c + ".txt")) {
 			System.out.println(c + " file is already present");
 			System.out.println("So cannot create file with same name. Please try with different name");
 			Thread.sleep(2000);
@@ -71,10 +74,10 @@ class Operations {
 	public static void Delete() {
 		System.out.println("----------------------------------------------------------------");
 		System.out.println("Please enter name of file to be deleted");
-		
+		// String d;
 		d = sc.next();
 
-		File f = new File(Path + d + ".txt");
+		File f = new File("C:\\Users\\Laurel\\Desktop\\Project\\" + d + ".txt");
 		if (f.exists() == true) {
 			if (f.delete() == true) {
 				System.out.println("File is Deleted Successfully");
@@ -91,10 +94,10 @@ class Operations {
 	public static void Search() {
 		System.out.println("----------------------------------------------------------------");
 		System.out.println("Please enter name of file you want to search");
-		
+		// String e;
 		e = sc.next();
 
-		File f = new File(Path + e + ".txt");
+		File f = new File("C:\\Users\\Laurel\\Desktop\\Project\\" + e + ".txt");
 		if (f.exists() == true) {
 			System.out.println("File is found");
 		} else {
