@@ -7,7 +7,7 @@ import java.util.TreeSet;
 
 
 class Operations {
-	// Operations obj = new Operations();
+	
 	static Scanner sc = new Scanner(System.in);
 	public static int a;
 	public static String c;
@@ -26,12 +26,11 @@ class Operations {
 		a = sc.nextInt();
 	}
 
-	public static void view() {// System.out.println("1");
+	public static void view() {
 		System.out.println("----------------------------------------------------------------");
 		File f = new File(Path);
 		File[] arr = f.listFiles();
-		// System.out.println(arr);
-		// System.out.println(arr.length);
+		//adding elemnets to TreeSet... Tresset will sort values for me
 		TreeSet<String> abc = new TreeSet<String>();
 		for (int i = 0; i <= arr.length - 1; i++) {
 			abc.add(arr[i].getName());
@@ -47,22 +46,16 @@ class Operations {
 		System.out.println("Please enter name of file");
 		c = sc.next();
 		File f = new File(Path + c + ".txt");
-		// File f = new File("C:\\Users\\Laurel\\Desktop\\Project\\lau1.txt");
-		// System.out.println("C:\\Users\\Laurel\\Desktop\\Project\\"+c+".txt");
-		// f.createNewFile();
 		File f1 = new File(Path);
 		File[] arr = f1.listFiles();
-		// System.out.println(arr);
+		
 		// System.out.println(arr.length);
 		TreeSet<String> abc = new TreeSet<String>();
 		for (int i = 0; i <= arr.length - 1; i++) {
 			abc.add(arr[i].getName());
 		}
 		// using sorting methods
-		// TreeSet abc = new TreeSet();
-		// System.out.println(abc);
-
-		if (abc.contains(c + ".txt")) {
+			if (abc.contains(c + ".txt")) {
 			System.out.println(c + " file is already present");
 			System.out.println("So cannot create file with same name. Please try with different name");
 			Thread.sleep(2000);
@@ -78,7 +71,7 @@ class Operations {
 	public static void Delete() {
 		System.out.println("----------------------------------------------------------------");
 		System.out.println("Please enter name of file to be deleted");
-		// String d;
+		
 		d = sc.next();
 
 		File f = new File(Path + d + ".txt");
@@ -98,7 +91,7 @@ class Operations {
 	public static void Search() {
 		System.out.println("----------------------------------------------------------------");
 		System.out.println("Please enter name of file you want to search");
-		// String e;
+		
 		e = sc.next();
 
 		File f = new File(Path + e + ".txt");
